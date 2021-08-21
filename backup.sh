@@ -17,7 +17,7 @@ sqlfile=all-database-$fileName.sql
 zipfile=$backupFolder/all-database-$fileName.zip
 
 # Create a backup
-mysqldump -u $user -p$password --all-databases > $sqlfile
+mysqldump -u $user -p$password --all-databases --single-transaction > $sqlfile
 if [ $? == 0 ]; then
   echo '[BACKUP] Successfully created SQL dump.'
 else
